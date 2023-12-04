@@ -1,0 +1,10 @@
+#container {
+  border: red solid 1px;
+  width: 480px;
+  height: 480px;
+  margin: 0 auto;
+}
+
+#cell :hover {
+  background-color: red;
+}
