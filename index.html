@@ -8,12 +8,32 @@
   <script src="scripts/functionality.js" type="text/javascript" defer></script>
 </head>
 <body>
-  <div id="container">
-    
-  </div>
+  <div id="wrapper">
+    <div id="buttonContainer">
+      <div id="buttonLayout">
+        <div id="colorSection" class="layout-items">
+          <span class="colorTitle">Choose A Color</span>
+          <input type="color" id="colorPicker">
+        </div>
+        <div id="sizer">
+          <div class="rangeTitle">
+            <span class="titleText">Choose Grid Size</span>
+          </div>
+          <input type="range" min="16" max="64"  id="gridSize">
+          <div id="rangeValue">0x0</div>
+        </div>
+        <div id="clearer" class="layout-items">
+          <span class="clearTitle">Clear The Board</span>
+          <button id="clear">CLEAR</button>
+        </div>
+      </div>
+      
+      
 
-  <button id="clear">Clear</button>
-  <input type="text" id="gridSize" placeholder="Enter a number up to 64">
-  <button id="setGridSize">Submit</button>
+    </div>
+
+    <div id="container"></div>
+  </div>
+  
 </body>
 </html>

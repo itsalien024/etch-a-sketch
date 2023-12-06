@@ -1,10 +1,18 @@
 let gridSize = document.querySelector("#gridSize");
 let setGridSize = document.querySelector("#setGridSize");
+let clear = document.querySelector("#clear");
+let color = document.querySelector("#colorPicker");
+let rangeValue = document.querySelector("#rangeValue");
+let colorChange;
 let size;
 let cellSize;
 let gridBorder = 480;
-
 let cells = [];
+
+color.addEventListener('input', function() {
+  colorChange = String(color.value);
+  return colorChange;
+})
 
 function makeGrid() {
   let container = document.querySelector("#container");
@@ -33,7 +41,7 @@ function makeGrid() {
       cell.style.height = cellSize + "px";
       cell.addEventListener("mouseover", function() {
         if (isMouseDown) {
-          cell.style.backgroundColor = "blue"
+          cell.style.backgroundColor = colorChange;
         }
       });
       row.appendChild(cell);
@@ -42,16 +50,12 @@ function makeGrid() {
   }
 }
 
-setGridSize.addEventListener('click', function() {
+gridSize.addEventListener('input', function() {
   size = Number(gridSize.value);
   cellSize = gridBorder / size;
+  rangeValue.innerHTML = gridSize.value + "x" + gridSize.value;
   makeGrid();
-  return cellSize;
-});
-
-
-
-let clear = document.querySelector("#clear")
+})
 
 clear.onclick = function() {
   cells.forEach(cell => {
